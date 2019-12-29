@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react-dom/test-utils';
-import {Appointment, AppointmentsDayView} from '../src/Appointment.js';
+import {Appointment, AppointmentsDayView} from '../src/AppointmentDayView.js';
 
 describe('Appointment', () => {
   let customer;
