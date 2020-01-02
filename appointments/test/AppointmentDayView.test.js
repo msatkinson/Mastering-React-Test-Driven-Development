@@ -10,6 +10,13 @@ describe('Appointment', () => {
     container = document.createElement('div');
   });
   const render = component => {ReactDOM.render(component, container)};
+  it('renders a table', () => {
+    customer = {};
+
+    render(<Appointment customer={customer}/>);
+
+    expect(container.querySelector('#appointment > table')).not.toBeNull();
+  });
   it('renders the customer first name', () => {
     customer = {firstName: 'Ashley'};
 
@@ -24,6 +31,65 @@ describe('Appointment', () => {
 
     expect(container.textContent).toMatch('Jordan');
   });
+  it('renders the customer last name', () => {
+    customer = {lastName: 'Murray'};
+
+    render(<Appointment customer={customer} />);
+
+    expect(container.textContent).toContain('Murray');
+  });
+  it('renders another customer last name', () => {
+    customer = {lastName: 'Rafter'};
+
+    render(<Appointment customer={customer} />);
+
+    expect(container.textContent).toContain('Rafter');
+  });
+  it('renders the customer phone number', () => {
+    customer = {phoneNumber: '555-1234156'};
+
+    render(<Appointment customer={customer} />);
+
+    expect(container.textContent).toContain('555-1234156');
+  });
+  it('renders another customer phone number', () => {
+    customer = {phoneNumber: '555-987654'};
+
+    render(<Appointment customer={customer} />);
+
+    expect(container.textContent).toContain('555-987654');
+  });
+  it('renders the stylist name', () => {
+    render(<Appointment customer={{}} stylist='Jason' />);
+
+    expect(container.textContent).toContain('Jason');
+  });
+  it('renders another stylist name', () => {
+    render(<Appointment customer={{}} stylist='Mia' />);
+
+    expect(container.textContent).toContain('Mia');
+  });
+  it('renders the service', () => {
+    render(<Appointment customer={{}} service='Cut' />);
+
+    expect(container.textContent).toContain('Cut');
+  });
+  it('renders another service', () => {
+    render(<Appointment customer={{}} service='Blow Dry' />);
+
+    expect(container.textContent).toContain('Blow Dry');
+  });
+  it('renders the appointment notes', () => {
+    render(<Appointment customer={{}} notes='soap allergy' />);
+
+    expect(container.textContent).toContain('soap allergy');
+  });
+  it('renders another appointment notes', () => {
+    render(<Appointment customer={{}} notes='a note' />);
+
+    expect(container.textContent).toContain('a note');
+  });
+
 });
 describe('AppointmentsDayView', () => {
   let container;
