@@ -1,0 +1,29 @@
+{
+  "name": "appointments",
+  "version": "1.0.0",
+  "description": "my appointments app",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/runtime": "^7.9.6",
+    "babel-loader": "^8.0.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "jest": "^26.0.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "example.com"
+  },
+  "author": "",
+  "license": "ISC"
+}
